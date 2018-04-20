@@ -1,3 +1,3 @@
 'use strict'
 
-exports.Client = require('./lib/client')
+exports.MessageUtils = require('./lib/message-utils')

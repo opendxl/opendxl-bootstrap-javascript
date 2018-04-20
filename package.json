@@ -20,7 +20,8 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "@opendxl/dxl-client": "^0.0.1"
+    "@opendxl/dxl-client": "^0.0.1",
+    "safe-buffer": "^5.1.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -42,7 +43,7 @@
     "dist": "npm pack && npm run doc && node scripts/dist.js",
     "test": "mocha --recursive",
     "lint": "npm run lint:jshint && npm run lint:standard",
-    "lint:jshint": "jshint bin lib scripts test",
+    "lint:jshint": "jshint lib test",
     "lint:standard": "standard | snazzy",
     "preci": "npm run lint",
     "ci": "npm run test",
