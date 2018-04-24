@@ -28,7 +28,7 @@ describe('Application @integration', function () {
     function (done) {
       var app = new TestApplication('', this, done)
       var connected = false
-      app.onDxlConnect = function () { connected = this.dxlClient.connected }
+      app.onDxlConnect = function () { connected = this._dxlClient.connected }
       app.run(function () {
         app.shutdown(null, function () {
           expect(connected).to.be.true
@@ -72,7 +72,7 @@ describe('Application @integration', function () {
     }
     app.onRegisterEventHandlers = function () {
       var that = this
-      var client = this.dxlClient
+      var client = this._dxlClient
 
       client.addEventCallback(topic, function (event) {
         that.shutdown(null, function () {
@@ -85,7 +85,7 @@ describe('Application @integration', function () {
     app.run(function () {
       var event = new dxl.Event(topic)
       event.payload = app._eventPayload
-      app.dxlClient.sendEvent(event)
+      app._dxlClient.sendEvent(event)
     })
   })
 
@@ -98,14 +98,14 @@ describe('Application @integration', function () {
     }
     app.onRegisterServices = function () {
       var that = this
-      var client = this.dxlClient
+      var client = this._dxlClient
       var regInfo = new ServiceRegistrationInfo(client, 'app_test_service')
 
       regInfo.addTopic(topic, function (request) {
         var response
         response = new Response(request)
         response.payload = 'Echo: ' + request.payload
-        that.dxlClient.sendResponse(response)
+        that._dxlClient.sendResponse(response)
       })
       app.registerServiceAsync(regInfo)
     }
@@ -113,7 +113,7 @@ describe('Application @integration', function () {
     app.run(function () {
       var request = new Request(topic)
       request.payload = app._requestPayload
-      app.dxlClient.asyncRequest(request, function (error, response) {
+      app._dxlClient.asyncRequest(request, function (error, response) {
         app.shutdown(error, function () {
           expect(MessageUtils.decodePayload(response)).to.equal('Echo: ping')
           done()

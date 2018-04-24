@@ -7,6 +7,6 @@ var Client = require('..').Client
 describe('Client', function () {
   it('should preserve the client passed into it', function () {
     var obj = 42
-    expect(new Client(obj).dxlClient).to.equal(obj)
+    expect(new Client(obj)._dxlClient).to.equal(obj)
   })
 })
