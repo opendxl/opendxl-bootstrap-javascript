@@ -1,6 +1,6 @@
 {
   "name": "@opendxl/dxl-bootstrap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "McAfee, LLC",
   "description": "OpenDXL Bootstrap Application",
   "license": "Apache-2.0",
@@ -39,7 +39,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/opendxl/opendxl-client-bootstrap.git"
+    "url": "git://github.com/opendxl/opendxl-bootstrap-javascript.git"
   },
   "scripts": {
     "predist": "npm install && rimraf *.tgz",
