@@ -97,12 +97,43 @@ describe('MessageUtils', function () {
       function () {
         expect(MessageUtils.objectToJson(
           {
-            someKey: false,
-            anotherKey: '12345',
-            yetAnotherKey: 3
-          }, true)).to.eql(
-          '{\n    "anotherKey": "12345",\n    "someKey": false,\n    ' +
-          '"yetAnotherKey": 3\n}')
+            booleanProp: false,
+            stringProp: '12345',
+            numberProp: 3,
+            arrayProp: [
+              'sub item 1',
+              {
+                stringSubProp1: 'sub item 2',
+                numberSubProp: 42
+              },
+              {
+                stringSubProp3: 'sub item 3',
+                nullProp: null
+              }
+            ],
+            objProp: {
+              stringSubProp4: 'sub item 4',
+              booleanSubProp: true
+            }
+          }, true)).to.eql(['{',
+            '"arrayProp": [',
+            '    "sub item 1",',
+            '    {',
+            '        "numberSubProp": 42,',
+            '        "stringSubProp1": "sub item 2"',
+            '    },',
+            '    {',
+            '        "nullProp": null,',
+            '        "stringSubProp3": "sub item 3"',
+            '    }',
+            '],',
+            '"booleanProp": false,',
+            '"numberProp": 3,',
+            '"objProp": {',
+            '    "booleanSubProp": true,',
+            '    "stringSubProp4": "sub item 4"',
+            '},',
+            '"stringProp": "12345"'].join('\n    ') + '\n}')
       }
     )
   })
