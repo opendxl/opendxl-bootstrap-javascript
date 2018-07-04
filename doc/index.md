@@ -7,4 +7,4 @@ integration with JavaScript. The helpers extend the basic functionality of the
 
 ## Installation
 
-* [Installation]{@tutorial installation}
+* {@tutorial installation}
