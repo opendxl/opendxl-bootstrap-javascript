@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: External: Message</title>
+    <title>JSDoc: Source: client.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,107 +17,44 @@
 
 <div id="main">
 
-    <h1 class="page-title">External: Message</h1>
+    <h1 class="page-title">Source: client.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2>
-            <span class="ancestors"><a href="module-MessageUtils.html">MessageUtils</a>~</span>Message</h2>
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @classdesc Responsible for all communication with the
+ * Data Exchange Layer (DXL) fabric.
+ * @external DxlClient
+ * @see {@link https://opendxl.github.io/opendxl-client-javascript/jsdoc/Client.html}
+ */
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Base class for the different Data Exchange Layer (DXL) message types.</p></div>
-        
+'use strict'
 
-        
+/**
+ * @classdesc Base class used for DXL client wrappers.
+ * @param {external:DxlClient} dxlClient - The DXL client to use for
+ *   communication with the fabric.
+ * @constructor
+ */
+function Client (dxlClient) {
+  /**
+   * The DXL client to use for communication with the fabric.
+   * @private
+   * @type {external.DxlClient}
+   * @name Application#_dxlClient
+   */
+  this._dxlClient = dxlClient
+}
 
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="message-utils.js.html">message-utils.js</a>, <a href="message-utils.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://opendxl.github.io/opendxl-client-javascript/jsdoc/Message.html">https://opendxl.github.io/opendxl-client-javascript/jsdoc/Message.html</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+module.exports = Client
+</code></pre>
+        </article>
+    </section>
 
 
 
