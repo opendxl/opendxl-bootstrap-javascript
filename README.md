@@ -20,6 +20,16 @@ See the
 [OpenDXL Bootstrap JavaScript SDK Documentation](https://opendxl.github.io/opendxl-bootstrap-javascript/jsdoc)
 for API documentation.
 
+## Installation
+
+To start using the OpenDXL Bootstrap JavaScript library:
+
+* Download the [Latest Release](https://github.com/opendxl/opendxl-bootstrap-javascript/releases/latest)
+* Extract the release .zip file
+* View the `README.html` file located at the root of the extracted files.
+  * The `README` links to the SDK documentation which includes installation instructions, API details, and samples.
+  * The SDK documentation is also available on-line [here](https://opendxl.github.io/opendxl-bootstrap-javascript/jsdoc).
+
 ## Bugs and Feedback
 
 For bugs, questions and discussions please use the
