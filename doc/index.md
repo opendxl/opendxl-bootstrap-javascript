@@ -8,3 +8,9 @@ integration with JavaScript. The helpers extend the basic functionality of the
 ## Installation
 
 * {@tutorial installation}
+
+## JavaScript API
+
+* {@link Application}
+* {@link Client}
+* [MessageUtils]{@link module:MessageUtils}
