@@ -1,6 +1,6 @@
 # OpenDXL Bootstrap JavaScript Library
 [![Latest NPM Version](https://img.shields.io/npm/v/@opendxl/dxl-bootstrap.svg)](https://www.npmjs.com/package/@opendxl/dxl-bootstrap)
-[![Build Status](https://img.shields.io/travis/opendxl/opendxl-bootstrap-javascript/master.svg)](https://travis-ci.org/opendxl/opendxl-bootstrap-javascript)
+[![Actions Status](https://github.com/opendxl/opendxl-bootstrap-javascript/workflows/Build/badge.svg)](https://github.com/opendxl/opendxl-bootstrap-javascript/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
