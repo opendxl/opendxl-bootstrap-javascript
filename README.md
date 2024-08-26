@@ -7,7 +7,7 @@
 ## Overview
 
 The OpenDXL Bootstrap JavaScript library includes helpers for developing a
-[Data Exchange Layer](http://www.mcafee.com/us/solutions/data-exchange-layer.aspx)
+[Data Exchange Layer](https://www.trellix.com/assets/docs/data-sheets/trellix-dataexchangelayer-datasheet.pdf)
 integration with JavaScript. The helpers extend the basic functionality of the
 [OpenDXL JavaScript Client (Node.js)](https://github.com/opendxl/opendxl-client-javascript).
 
@@ -37,7 +37,7 @@ For bugs, questions and discussions please use the
 
 ## LICENSE
 
-Copyright 2018 McAfee, LLC
+Copyright 2024 Musarubra US LLC
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the

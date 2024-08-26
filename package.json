@@ -1,13 +1,13 @@
 {
   "name": "@opendxl/dxl-bootstrap",
-  "version": "0.1.0",
-  "author": "McAfee, LLC",
+  "version": "0.1.1",
+  "author": "Musarubra US LLC",
   "description": "OpenDXL Bootstrap Application",
   "license": "Apache-2.0",
   "keywords": [
     "opendxl",
     "dxl",
-    "mcafee",
+    "trellix",
     "bootstrap"
   ],
   "files": [
@@ -17,7 +17,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@opendxl/dxl-client": "^0.1.0",
@@ -28,12 +28,12 @@
     "archiver": "^2.1.1",
     "chai": "^4.1.2",
     "inherits": "^2.0.3",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^4.0.3",
     "jshint": "^2.9.5",
-    "mocha": "^4.1.0",
+    "mocha": "^10.7.3",
     "rimraf": "^2.6.2",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.3",
+    "standard": "^17.1.0",
     "uuid": "^3.1.0"
   },
   "eslintConfig": {},
