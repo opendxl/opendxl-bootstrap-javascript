@@ -1,12 +1,12 @@
 'use strict'
 /* eslint no-unused-expressions: "off" */ // for chai expect assertions
 
-var expect = require('chai').expect
-var Client = require('..').Client
+const expect = require('chai').expect
+const Client = require('..').Client
 
 describe('Client', function () {
   it('should preserve the client passed into it', function () {
-    var obj = 42
+    const obj = 42
     expect(new Client(obj)._dxlClient).to.equal(obj)
   })
 })

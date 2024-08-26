@@ -1,23 +1,23 @@
 'use strict'
 
-var fs = require('fs')
-var os = require('os')
-var path = require('path')
-var inherits = require('inherits')
-var Application = require('../..').Application
+const fs = require('fs')
+const os = require('os')
+const path = require('path')
+const inherits = require('inherits')
+const Application = require('../..').Application
 
-var DEFAULT_TIMEOUT = 5000
-var CLIENT_CONFIG_FILE = 'dxlclient.config'
-var TEST_APP_CONFIG_FILE = 'testapp.config'
+const DEFAULT_TIMEOUT = 5000
+const CLIENT_CONFIG_FILE = 'dxlclient.config'
+const TEST_APP_CONFIG_FILE = 'testapp.config'
 
 function TestApplication (appConfig, test, errorCallback, timeout) {
-  var that = this
+  const that = this
 
-  var configDirs = [ __dirname, os.homedir() ]
-  var configDir = null
+  const configDirs = [__dirname, os.homedir()]
+  let configDir = null
 
   configDirs.forEach(function (candidateConfigDir) {
-    var candidateConfigFile = path.join(candidateConfigDir, CLIENT_CONFIG_FILE)
+    const candidateConfigFile = path.join(candidateConfigDir, CLIENT_CONFIG_FILE)
     if (fs.existsSync(candidateConfigFile)) {
       configDir = candidateConfigDir
     }
@@ -29,7 +29,7 @@ function TestApplication (appConfig, test, errorCallback, timeout) {
       path.join(configDirs[0], CLIENT_CONFIG_FILE))
   }
 
-  var appConfigFile = path.join(configDir, TEST_APP_CONFIG_FILE)
+  const appConfigFile = path.join(configDir, TEST_APP_CONFIG_FILE)
   fs.writeFileSync(appConfigFile, appConfig)
 
   Application.call(this, configDir, TEST_APP_CONFIG_FILE)

@@ -1,10 +1,10 @@
 'use strict'
 /* eslint no-unused-expressions: "off" */ // for chai expect assertions
 
-var Buffer = require('safe-buffer').Buffer
-var expect = require('chai').expect
-var Request = require('@opendxl/dxl-client').Request
-var MessageUtils = require('..').MessageUtils
+const Buffer = require('safe-buffer').Buffer
+const expect = require('chai').expect
+const Request = require('@opendxl/dxl-client').Request
+const MessageUtils = require('..').MessageUtils
 
 describe('MessageUtils', function () {
   context('.decode', function () {
@@ -17,7 +17,7 @@ describe('MessageUtils', function () {
   })
   context('.decodePayload', function () {
     it('should decode a buffer type message payload to a string', function () {
-      var request = new Request('')
+      const request = new Request('')
       request.payload = Buffer.from('decoded')
       expect(MessageUtils.decodePayload(request)).to.eql('decoded')
     })
@@ -25,28 +25,28 @@ describe('MessageUtils', function () {
   context('.jsonToObject', function () {
     it('should decode a json string into an object', function () {
       expect(MessageUtils.jsonToObject('{"decodeKey":"decodeValue"}')).to.eql(
-        {decodeKey: 'decodeValue'})
+        { decodeKey: 'decodeValue' })
     })
     it('should strip a trailing null byte when decoding a string', function () {
       expect(MessageUtils.jsonToObject('{"decodeKey":"decodeValue"}\0')).to.eql(
-        {decodeKey: 'decodeValue'})
+        { decodeKey: 'decodeValue' })
     })
   })
   context('.jsonPayloadToObject', function () {
     it('should decode a buffer type json message payload to an object',
       function () {
-        var request = new Request('')
+        const request = new Request('')
         request.payload = Buffer.from('{"decodeKey":"decodeValue"}')
         expect(MessageUtils.jsonPayloadToObject(request)).to.eql(
-          {decodeKey: 'decodeValue'})
+          { decodeKey: 'decodeValue' })
       }
     )
     it('should decode a null terminated json message payload to an object',
       function () {
-        var request = new Request('')
+        const request = new Request('')
         request.payload = Buffer.from('{"decodeKey":"decodeValue"}\0')
         expect(MessageUtils.jsonPayloadToObject(request)).to.eql(
-          {decodeKey: 'decodeValue'})
+          { decodeKey: 'decodeValue' })
       }
     )
   })
@@ -62,7 +62,7 @@ describe('MessageUtils', function () {
       expect(MessageUtils.encode(null)).to.eql(Buffer.alloc(0))
     })
     it('should encode an object to a buffer', function () {
-      expect(MessageUtils.encode({decodeKey: 'decodeValue'})).to.eql(
+      expect(MessageUtils.encode({ decodeKey: 'decodeValue' })).to.eql(
         Buffer.from('{"decodeKey":"decodeValue"}'))
     })
     it('should encode a number to a buffer', function () {
@@ -72,15 +72,15 @@ describe('MessageUtils', function () {
   context('.encodePayload', function () {
     it('should encode a string to the request payload as a buffer',
       function () {
-        var request = new Request('')
+        const request = new Request('')
         MessageUtils.encodePayload(request, 'encode')
         expect(request.payload).to.eql(Buffer.from('encode'))
       }
     )
     it('should encode an object to the request payload as a buffer',
       function () {
-        var request = new Request('')
-        MessageUtils.encodePayload(request, {decodeKey: 'decodeValue'})
+        const request = new Request('')
+        MessageUtils.encodePayload(request, { decodeKey: 'decodeValue' })
         expect(request.payload).to.eql(
           Buffer.from('{"decodeKey":"decodeValue"}'))
       }
@@ -89,7 +89,7 @@ describe('MessageUtils', function () {
   context('.objectToJson', function () {
     it('should encode an object to a json string without pretty print',
       function () {
-        expect(MessageUtils.objectToJson({decodeKey: 'decodeValue'})).to.eql(
+        expect(MessageUtils.objectToJson({ decodeKey: 'decodeValue' })).to.eql(
           '{"decodeKey":"decodeValue"}')
       }
     )
@@ -116,32 +116,32 @@ describe('MessageUtils', function () {
               booleanSubProp: true
             }
           }, true)).to.eql(['{',
-            '"arrayProp": [',
-            '    "sub item 1",',
-            '    {',
-            '        "numberSubProp": 42,',
-            '        "stringSubProp1": "sub item 2"',
-            '    },',
-            '    {',
-            '        "nullProp": null,',
-            '        "stringSubProp3": "sub item 3"',
-            '    }',
-            '],',
-            '"booleanProp": false,',
-            '"numberProp": 3,',
-            '"objProp": {',
-            '    "booleanSubProp": true,',
-            '    "stringSubProp4": "sub item 4"',
-            '},',
-            '"stringProp": "12345"'].join('\n    ') + '\n}')
+          '"arrayProp": [',
+          '    "sub item 1",',
+          '    {',
+          '        "numberSubProp": 42,',
+          '        "stringSubProp1": "sub item 2"',
+          '    },',
+          '    {',
+          '        "nullProp": null,',
+          '        "stringSubProp3": "sub item 3"',
+          '    }',
+          '],',
+          '"booleanProp": false,',
+          '"numberProp": 3,',
+          '"objProp": {',
+          '    "booleanSubProp": true,',
+          '    "stringSubProp4": "sub item 4"',
+          '},',
+          '"stringProp": "12345"'].join('\n    ') + '\n}')
       }
     )
   })
   context('.objectToJsonPayload', function () {
     it('should encode an object to the request payload as a buffer',
       function () {
-        var request = new Request('')
-        MessageUtils.objectToJsonPayload(request, {decodeKey: 'decodeValue'})
+        const request = new Request('')
+        MessageUtils.objectToJsonPayload(request, { decodeKey: 'decodeValue' })
         expect(request.payload).to.eql(
           Buffer.from('{"decodeKey":"decodeValue"}'))
       }
